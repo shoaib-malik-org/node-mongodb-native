@@ -1373,6 +1373,10 @@ describe('Change Streams', function () {
     .run();
 
   UnifiedTestSuiteBuilder.describe('entity.watch() server-side options')
+    .runOnRequirement({
+      topologies: ['replicaset', 'sharded-replicaset', 'sharded', 'load-balanced'],
+      minServerVersion: '4.4.0'
+    })
     .createEntities([
       { client: { id: 'client0', observeEvents: ['commandStartedEvent'] } },
       { database: { id: 'db0', client: 'client0', databaseName: 'watchOpts' } },
