@@ -48,7 +48,11 @@ const failpointTests = [
   'Reset server and pool after network timeout error during authentication',
   'Reset server and pool after shutdown error during authentication'
 ];
-const skippedTests = isAuthEnabled ? failpointTests : [];
+
+// TODO: NODE-3135 - make CMAP SDAM-aware and ensure PoolClearError is retryable
+const cmapSkippedTests = ['PoolClearedError does not mark server unknown'];
+
+const skippedTests = isAuthEnabled ? failpointTests.concat(cmapSkippedTests) : cmapSkippedTests;
 
 function sdamDisabledTestFilter(test) {
   const { description } = test;
