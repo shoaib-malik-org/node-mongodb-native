@@ -19,7 +19,7 @@ The official [MongoDB](https://www.mongodb.com/) driver for Node.js.
 
 ### Bugs / Feature Requests
 
-Think you’ve found a bug? Want to see a new feature in `node-mongodb-native`? Please open a
+Think you have found a bug? Want to see a new feature in `node-mongodb-native`? Please open a
 case in our issue management tool, JIRA:
 
 - Create an account and login [jira.mongodb.org](https://jira.mongodb.org).
